@@ -1,0 +1,53 @@
+<section class="content-section" id="engineering" aria-labelledby="engineering-title">
+  <header class="section-heading">
+    <p class="terminal-command"><strong>yuri@portfolio</strong>:~$ less learning-path.log</p>
+    <h2 id="engineering-title">Engenharia &amp; learning path</h2>
+    <p>
+      Quero ir além de fazer uma aplicação funcionar: busco entender suas decisões, trade-offs e
+      como mantê-la evoluindo com segurança. Estes são temas que estou explorando, não uma lista de
+      especializações consolidadas.
+    </p>
+  </header>
+
+  <div class="topic-grid">
+    <article class="terminal-window topic-panel">
+      <header class="terminal-titlebar">
+        <span class="terminal-path">architecture.log</span>
+        <span class="panel-index">01</span>
+      </header>
+      <div class="panel-content">
+        <h3>Arquitetura &amp; design</h3>
+        <p class="learning-status">{{ learningStatus }}</p>
+        <p>
+          Estudo como modularidade, dependências e limites de domínio afetam manutenção,
+          testabilidade e evolução de um sistema — e quando cada abordagem faz sentido.
+        </p>
+        <ul class="terminal-list">
+          @for (topic of engineeringTopics; track topic) {
+            <li>{{ topic }}</li>
+          }
+        </ul>
+      </div>
+    </article>
+
+    <article class="terminal-window topic-panel">
+      <header class="terminal-titlebar">
+        <span class="terminal-path">computer-science.log</span>
+        <span class="panel-index">02</span>
+      </header>
+      <div class="panel-content">
+        <h3>Algoritmos &amp; computação</h3>
+        <p class="learning-status">Estudo contínuo</p>
+        <p>
+          O estudo de algoritmos fortalece meu raciocínio e ajuda a avaliar estruturas,
+          desempenho e os custos envolvidos em cada solução.
+        </p>
+        <ul class="terminal-list">
+          @for (topic of computerScienceTopics; track topic) {
+            <li>{{ topic }}</li>
+          }
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>

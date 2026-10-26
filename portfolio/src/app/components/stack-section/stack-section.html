@@ -1,0 +1,30 @@
+<section class="content-section" id="stack" aria-labelledby="stack-title">
+  <header class="section-heading">
+    <p class="terminal-command"><strong>yuri@portfolio</strong>:~$ cat stack.json</p>
+    <h2 id="stack-title">Tecnologias &amp; estudos</h2>
+    <p>
+      Tecnologias e tópicos organizados pelo contexto em que fazem parte da minha trajetória —
+      entre experiência, projetos e estudos em andamento.
+    </p>
+  </header>
+
+  <div class="skill-groups">
+    @for (group of groups; track group.label) {
+      <article class="terminal-window skill-group">
+        <header class="terminal-titlebar">
+          <span class="terminal-path">{{ group.label }}</span>
+          <span class="skill-context">{{ group.context }}</span>
+        </header>
+        <div class="panel-content">
+          <h3>{{ group.label }}</h3>
+          <p class="skill-context-description">{{ group.context }}</p>
+          <ul class="tag-list" [attr.aria-label]="group.label">
+            @for (skill of group.skills; track skill) {
+              <li>{{ skill }}</li>
+            }
+          </ul>
+        </div>
+      </article>
+    }
+  </div>
+</section>

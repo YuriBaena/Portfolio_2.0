@@ -1,0 +1,36 @@
+<section class="mini-terminal terminal-window" aria-labelledby="mini-terminal-title">
+  <header class="terminal-titlebar">
+    <div class="terminal-controls" aria-hidden="true">
+      <span class="control-dot control-dot--close"></span>
+      <span class="control-dot control-dot--minimize"></span>
+      <span class="control-dot control-dot--maximize"></span>
+    </div>
+    <h2 class="terminal-path" id="mini-terminal-title">~/portfolio/terminal</h2>
+    <span class="terminal-path terminal-ready">interativo</span>
+  </header>
+
+  <div class="terminal-body" aria-live="polite" aria-relevant="additions">
+    @for (line of history(); track $index) {
+      <p class="terminal-output">
+        @if (line.command) {
+          <span class="terminal-prompt-label">yuri@portfolio:~$</span> {{ line.command }}<br>
+        }
+        <span>{{ line.output }}</span>
+      </p>
+    }
+
+    <form class="terminal-input-row" (submit)="$event.preventDefault(); runCommand(commandInput.value); commandInput.value = ''">
+      <label class="terminal-prompt-label" for="terminal-command-input">yuri@portfolio:~$</label>
+      <input
+        #commandInput
+        id="terminal-command-input"
+        name="command"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Digite um comando do terminal"
+      >
+      <button type="submit" class="terminal-submit">Executar</button>
+    </form>
+  </div>
+</section>

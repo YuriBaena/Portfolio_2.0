@@ -1,0 +1,22 @@
+<nav aria-label="Navegação principal">
+  <a class="brand" href="#home" aria-label="Yuri Baena, início">&lt;Yuri /&gt;</a>
+
+  <ul class="nav-links">
+    <li><a href="#home">Início</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#engineering">Learning path</a></li>
+    <li><a href="#projects">Projetos</a></li>
+    <li><a href="#contact">Carreira</a></li>
+  </ul>
+
+  <button
+    class="theme-toggle"
+    type="button"
+    (click)="themeService.cycleTheme()"
+    aria-label="Alternar tema"
+    title="Alternar tema de cores"
+  >
+    <span aria-hidden="true">◐</span>
+    <span>Tema</span>
+  </button>
+</nav>
